@@ -1,6 +1,7 @@
 import * as path from "path";
 import * as webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export function buildPlugins({
@@ -11,6 +12,10 @@ export function buildPlugins({
     new HtmlWebpackPlugin({
       title: "Production Project",
       template: paths.html,
+    }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
     }),
   ];
 }
