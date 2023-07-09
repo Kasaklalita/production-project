@@ -9,10 +9,10 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const [collapsed, setCollapsedd] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
-    setCollapsedd((prev) => !prev);
+    setCollapsed((prev) => !prev);
   };
 
   return (
